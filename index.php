@@ -2,7 +2,7 @@
 
 require 'index.html';
 
-require_once('libs\PHPMailer\PHPMailerAutoload.php');
+require('libs\PHPMailer\PHPMailerAutoload.php');
 
 if(!empty($_POST['Mail']))
 {
