@@ -1,10 +1,11 @@
 <?php 
 
-
+require 'index.html';
 
 require('libs\PHPMailer\PHPMailerAutoload.php');
 
-
+if(!empty($_POST['Mail']))
+{
 
 //Create a new PHPMailer instance
     $mail = new PHPMailer;
@@ -33,14 +34,14 @@ $mail->Debugoutput = 'html';
     $mail->Password = "I_ReSpawn";
 
 //Set who the message is to be sent from
-    $mail->setFrom('dsadsa@gmail.com', 'qwewqeqw eqweqwe';
+    $mail->setFrom($_POST['Mail'], $_POST['Firstname'] . ' ' . $_POST['Lastname']);
 //Set an alternative reply-to address
-    $mail->addReplyTo('asdasd@gmail.com','asdasd'. ' ' . 'asdasd');
+    $mail->addReplyTo($_POST['Mail'], $_POST['Firstname'] . ' ' . $_POST['Lastname']);
 //Set who the message is to be sent to
     $mail->addAddress('erik.arustamyan2000@gmail.com', 'John Doe');
 
-    $mail->Subject = 'Заказ на сайт: Цена - ' . 'qweqwe';
-    $mail->msgHTML('qweqweqweqw');
+    $mail->Subject = 'Заказ на сайт: Цена - ' . $_POST['Price'];
+    $mail->msgHTML($_POST['About']);
     $mail->ErrorInfo = 0;
 //Set the subject line
 //Read an HTML message body from an external file, convert referenced images to embedded,
@@ -61,3 +62,7 @@ $mail->do_debug = 0;
     }
 
 
+}
+else{
+
+}
