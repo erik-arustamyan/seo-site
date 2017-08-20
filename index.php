@@ -52,15 +52,16 @@ $mail->SMTPDebug = false;
 $mail->do_debug = 0;
     if (!$mail->send()) {
         ob_end_clean();
-        require 'Sent.html';
+        //require 'Sent.html';
 
     } else {
         ob_end_clean();
-        exit(require 'Sent.html');
+      //  exit(require 'Sent.html');
     }
 
 
 }
 else{
-require 'index.html';
+
 }
+require 'index.html';
