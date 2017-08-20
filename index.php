@@ -1,5 +1,7 @@
 <?php 
-date_default_timezone_set('Etc/UTC');
+
+require 'index.html';
+
 require_once('libs\PHPMailer\PHPMailerAutoload.php');
 
 if(!empty($_POST['Mail']))
@@ -64,4 +66,3 @@ $mail->do_debug = 0;
 else{
 
 }
-require 'index.html';
